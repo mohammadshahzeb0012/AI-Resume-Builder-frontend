@@ -11,12 +11,12 @@ const SkillsPreview = ({ resumeInfo }) => {
                 borderColor: resumeInfo?.themeColor
             }} />
 
-            <div className='grid grid-cols-2 gap-3 my-4'>
+            <div className='grid grid-cols-4 gap-2 my-4'>
                 {
                     resumeInfo?.skills?.map((skill, index) => {
-                        return <div key={index} className='flex items-center justify-between'>
+                        return <div key={index} className=''>
                             <h2 className='text-xs'>{skill.name}</h2>
-                            <div className="h-2 bg-gray-500 w-[120px]">
+                            {/* <div className="h-2 bg-gray-500 w-[120px]">
                                 <div className="h-2"
                                     style={{
                                         backgroundColor: resumeInfo?.themeColor,
@@ -24,7 +24,7 @@ const SkillsPreview = ({ resumeInfo }) => {
                                     }}
                                 >
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     })
                 }

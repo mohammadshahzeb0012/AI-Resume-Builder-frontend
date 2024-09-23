@@ -13,6 +13,8 @@ const ViewResume = () => {
     const [resumeInfo, setResumeInfo] = useState();
     const { resumeId } = useParams();
 
+
+
     useEffect(() => {
         GetResumeInfo()
     }, [])
@@ -20,7 +22,6 @@ const ViewResume = () => {
     const GetResumeInfo = () => {
         globalApies.getResumeById(resumeId)
             .then(res => {
-                console.log(res.data.data)
                 setResumeInfo(res.data.data)
             })
             .catch(() => {
@@ -30,6 +31,20 @@ const ViewResume = () => {
 
     const handelPrint = () => {
         window.print()
+    }
+
+    if (!resumeInfo) {
+        return <div className="flex items-center justify-center items-center h-screen gap-5">
+        <p className="text-2xl  font-bold">Please Wait </p>  
+         <div
+                className="animate-spin rounded-full border-t-2 border-b-2 border-transparent"
+                style={{
+                    borderTopColor: '#5A33FF',
+                    width: '50px',
+                    height: '50px',
+                }}
+            />
+        </div>
     }
 
     return (

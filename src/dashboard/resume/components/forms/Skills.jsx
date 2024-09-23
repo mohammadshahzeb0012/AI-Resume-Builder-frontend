@@ -52,7 +52,6 @@ const Skills = ({enabledNext}) => {
      ...newArr
       ]
     }
-    console.log(data)
     globalApies.updateResume(resumeId, data)
       .then(() => {
         setLoading(false)
@@ -87,8 +86,8 @@ const Skills = ({enabledNext}) => {
                 defaultValue={item.name}
                 onChange={(e) => handleChange(index, 'name', e.target.value)} />
             </div>
-            <Rating style={{ maxWidth: 120 }} value={item.rating}
-              onChange={(v) => handleChange(index, 'rating', v)} />
+            {/* <Rating style={{ maxWidth: 120 }} value={item.rating} */}
+              {/* onChange={(v) => handleChange(index, 'rating', v)} /> */}
           </div>
         })}
       </div>
